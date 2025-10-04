@@ -81,4 +81,8 @@ contract LunarBox is IBEP20 {
         _allowances[tokenOwner][spender] = amount;
         emit Approval(tokenOwner, spender, amount);
     }
+     function pause() public only owner  {
+         require(!pausedisabled, "BTCN: Pause permanantly disabled")
+         _pause();
+         emit Pausedbyowner(msg.sender);
 }
